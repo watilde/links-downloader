@@ -22,9 +22,8 @@ const btn = document.getElementById('download')
 btn.addEventListener('click', () => {
   links.forEach((link) => {
     const a = document.createElement('A');
-    a.href = 'https://www.w3schools.com/images/myw3schoolsimage.jpg';
-    a.download = 'test';
-    a.innerHTML='test <br/>'
+    a.href = link;
+    a.download = link.split('/').pop();
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
