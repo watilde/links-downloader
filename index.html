@@ -18,15 +18,18 @@ https://watilde.github.io/links-downloader/example/1x1.png</textarea>
     <button id="download">Downloads</button>
     <script>
 const btn = document.getElementById('download')
-btn.addEventListener('click', () => {
+btn.addEventListener('click', (e) => {
+  e.preventDefault();
   const links = document.getElementById('links').value.split('\n')
-  links.forEach((link) => {
-    const a = document.createElement('A');
-    a.href = link;
-    a.download = link.split('/').pop();
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  links.forEach((link, i) => {
+    setTimeout(() => {
+      const a = document.createElement('A');
+      a.href = link;
+      a.download = link.split('/').pop();
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, i * 1000)
   })
 })
     </script>
