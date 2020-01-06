@@ -17,9 +17,9 @@ https://watilde.github.io/links-downloader/example/1x1.png</textarea>
     <br />
     <button id="download">Downloads</button>
     <script>
-const links = document.getElementById('links').value.split('\n')
 const btn = document.getElementById('download')
 btn.addEventListener('click', () => {
+  const links = document.getElementById('links').value.split('\n')
   links.forEach((link) => {
     const a = document.createElement('A');
     a.href = link;
