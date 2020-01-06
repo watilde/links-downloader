@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>links-downloader</title>
+    <style>
+      html, body {
+        margin: 0;
+      }
+      #links {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="links" rows="10">https://watilde.github.io/links-downloader/example/1x1.png
+https://watilde.github.io/links-downloader/example/1x1.png</textarea>
+    <br />
+    <br />
+    <button id="download">Downloads</button>
+    <script>
+const links = document.getElementById('links').value.split('\n')
+const btn = document.getElementById('download')
+btn.addEventListener('click', () => {
+  links.forEach((link) => {
+    window.open(link)
+  })
+})
+    </script>
+  <body>
+</html>
